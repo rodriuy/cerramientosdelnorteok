@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos y Servicios - Cerramientos del Norte</title>
+    <meta name="description" content="Especialistas en aberturas de aluminio, vidriería y herrería. Fabricantes de Doble Vidriado Hermético (DVH) con tecnología de punta.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --brand-red: #B91C1C;
+            --brand-dark: #111827;
+            --brand-light: #f8fafc;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--brand-dark); color: var(--brand-light); }
+        h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+        .brand-red { color: var(--brand-red); }
+        .bg-brand-red { background-color: var(--brand-red); }
+        .border-brand-red { border-color: var(--brand-red); }
+        .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .nav-link.active { color: var(--brand-red); position: relative; }
+        .nav-link.active::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 100%; height: 3px; background-color: var(--brand-red); border-radius: 2px; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .cta-pulse { animation: pulse 2.5s infinite; }
+        
+        /* Estilos para el Modal */
+        .modal {
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(10px); /* Aplica el efecto blur al fondo */
+            -webkit-backdrop-filter: blur(10px); /* Para navegadores Safari */
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        .series-card {
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .series-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(185, 28, 28, 0.3), 0 4px 6px -2px rgba(185, 28, 28, 0.2);
+        }
+    </style>
+</head>
+<body class="text-gray-300">
+
+    <header id="header" class="bg-brand-dark/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-lg shadow-black/20">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="logocerramientos.png.png" alt="Logo Cerramientos del Norte" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/200x40/111827/FFFFFF?text=C<N>';"></a>
+            <div class="hidden lg:flex items-center space-x-10 text-lg">
+                <a href="index.html" class="nav-link text-gray-300 hover:brand-red transition-colors duration-300">Inicio</a>
+                <a href="productos.html" class="nav-link text-gray-300 hover:brand-red transition-colors duration-300 active">Productos</a>
+                <a href="proyectos.html" class="nav-link text-gray-300 hover:brand-red transition-colors duration-300">Proyectos</a>
+                <a href="nosotros.html" class="nav-link text-gray-300 hover:brand-red transition-colors duration-300">Nosotros</a>
+            </div>
+            <a href="contacto.html" class="hidden lg:inline-block bg-brand-red text-white font-bold px-6 py-3 rounded-md shadow-md hover:bg-red-500 transition-all duration-300 transform hover:scale-105">CONTACTAR</a>
+            <button id="mobile-menu-button" class="lg:hidden text-white focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark border-t border-gray-700">
+            <a href="index.html" class="block text-center py-4 px-4 text-gray-300 hover:bg-gray-800 hover:brand-red">Inicio</a>
+            <a href="productos.html" class="block text-center py-4 px-4 text-gray-300 bg-gray-800 brand-red">Productos</a>
+            <a href="proyectos.html" class="block text-center py-4 px-4 text-gray-300 hover:bg-gray-800 hover:brand-red">Proyectos</a>
+            <a href="nosotros.html" class="block text-center py-4 px-4 text-gray-300 hover:bg-gray-800 hover:brand-red">Nosotros</a>
+            <a href="contacto.html" class="block text-center py-4 px-4 text-gray-300 hover:bg-gray-800 hover:brand-red">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-gray-900 pt-48 pb-24">
+            <div class="container mx-auto px-6 text-center">
+                <div class="reveal">
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-wider text-white">NUESTRAS <span class="brand-red">SOLUCIONES</span></h1>
+                    <p class="text-xl md:text-2xl font-light mt-4 max-w-4xl mx-auto text-gray-300">
+                        Diseñamos, fabricamos e instalamos soluciones de alta performance para todo tipo de proyectos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-brand-dark py-24">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <img src="dvh.png" alt="Fabricación de Doble Vidriado Hermético (DVH)" class="rounded-lg shadow-2xl shadow-black/30 w-full">
+                    </div>
+                    <div class="reveal">
+                        <h2 class="text-4xl font-bold text-white">INNOVACIÓN PROPIA: <span class="brand-red">FABRICANTES DE DVH</span></h2>
+                        <div class="mt-4 mb-6 w-24 h-1 bg-brand-red rounded"></div>
+                        <p class="text-gray-300 mb-4 text-lg">
+                            Hemos incorporado una línea de producción especializada en <strong>Doble Vidriado Hermético (DVH)</strong>, una tecnología que mejora notablemente el confort térmico y acústico de los espacios.
+                        </p>
+                         <p class="text-gray-300 mb-6 text-lg">
+                           Este sistema de dos vidrios separados por una cámara de aire sellada mejora la eficiencia energética, posicionándonos como uno de los pocos fabricantes locales en la región.
+                        </p>
+                        <div class="space-y-4 text-lg">
+                            <div class="flex items-center"><i class="fas fa-wind brand-red mr-4 text-2xl"></i><span>Aislamiento térmico y eficiencia energética.</span></div>
+                            <div class="flex items-center"><i class="fas fa-volume-mute brand-red mr-4 text-2xl"></i><span>Reducción acústica para mayor confort.</span></div>
+                            <div class="flex items-center"><i class="fas fa-cogs brand-red mr-4 text-2xl"></i><span>Proceso controlado: lavado, armado y sellado de precisión.</span></div>
+                            <div class="flex items-center"><i class="fas fa-check-circle brand-red mr-4 text-2xl"></i><span>Máxima calidad y durabilidad garantizada.</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-900 py-24">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl font-bold text-white">NUESTRAS ÁREAS DE <span class="brand-red">ESPECIALIZACIÓN</span></h2>
+                    <div class="mt-4 w-24 h-1 bg-brand-red mx-auto rounded"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-brand-dark p-8 rounded-lg shadow-lg reveal">
+                        <i class="fas fa-ruler-combined text-5xl brand-red mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">ABERTURAS EN ALUMINIO</h3>
+                        <p class="text-gray-400">Diseñamos, fabricamos e instalamos puertas, ventanas y cerramientos utilizando líneas de primera calidad para un acabado perfecto.</p>
+                    </div>
+                    <div class="bg-brand-dark p-8 rounded-lg shadow-lg reveal" style="transition-delay: 200ms;">
+                         <i class="fas fa-clone text-5xl brand-red mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">VIDRIERÍA DE OBRA</h3>
+                        <p class="text-gray-400">Realizamos cortes, armado y colocación de vidrios en todo tipo de estructuras, tanto residenciales como institucionales o industriales.</p>
+                    </div>
+                    <div class="bg-brand-dark p-8 rounded-lg shadow-lg reveal" style="transition-delay: 400ms;">
+                         <i class="fas fa-tools text-5xl brand-red mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">HERRERÍA DE OBRA</h3>
+                        <p class="text-gray-400">Desarrollamos soluciones estructurales y decorativas en hierro, adaptadas a los requerimientos técnicos y estéticos de cada proyecto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-brand-dark py-24">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-4xl font-bold text-white">CALIDAD GARANTIZADA CON <span class="brand-red">ALUMINIOS DEL URUGUAY</span></h2>
+                     <div class="mt-4 w-24 h-1 bg-brand-red mx-auto rounded"></div>
+                    <p class="text-lg text-gray-400 mt-4">
+                        Nuestros principales insumos provienen de Aluminios del Uruguay, lo que garantiza calidad y durabilidad. <strong>Haga clic en cada línea</strong> para conocer sus características.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center reveal">
+                    <div class="series-card bg-gray-900 p-6 rounded-lg" data-modal="modal-serie20"><p class="text-xl font-semibold text-white">Serie 20</p></div>
+                    <div class="series-card bg-gray-900 p-6 rounded-lg" data-modal="modal-prova"><p class="text-xl font-semibold text-white">Prova</p></div>
+                    <div class="series-card bg-gray-900 p-6 rounded-lg" data-modal="modal-gala"><p class="text-xl font-semibold text-white">Gala</p></div>
+                    <div class="series-card bg-gray-900 p-6 rounded-lg" data-modal="modal-galacr"><p class="text-xl font-semibold text-white">Gala CR</p></div>
+                    <div class="series-card bg-gray-900 p-6 rounded-lg" data-modal="modal-suma"><p class="text-xl font-semibold text-white">Suma</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-900 py-24">
+            <div class="container mx-auto px-6 text-center">
+                <div class="reveal">
+                    <h2 class="text-4xl md:text-6xl font-bold text-white">¿TENÉS UN PROYECTO EN MENTE?</h2>
+                    <p class="text-gray-300 my-6 text-xl">Hablemos. Nuestro equipo de expertos está listo para asesorarte.</p>
+                    <a href="contacto.html" class="cta-pulse inline-block bg-brand-red text-white font-bold text-2xl px-12 py-5 rounded-lg shadow-lg hover:bg-red-500 transition-all duration-300 transform hover:scale-100">
+                        SOLICITAR COTIZACIÓN
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
+                <div class="lg:col-span-1"><a href="index.html" class="inline-block mb-2"><img src="logocerramientos.png.png" alt="Logo Cerramientos del Norte" class="h-12 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/180x50/000000/FFFFFF?text=C<N>';"></a><p class="text-gray-500 text-sm">Vanguardia en aberturas de aluminio.</p></div>
+                <div><h4 class="font-bold mb-4 uppercase tracking-wider text-gray-400">Secciones</h4><ul class="space-y-2"><li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li><li><a href="productos.html" class="text-gray-400 hover:text-white transition-colors">Productos</a></li><li><a href="proyectos.html" class="text-gray-400 hover:text-white transition-colors">Proyectos</a></li><li><a href="nosotros.html" class="text-gray-400 hover:text-white transition-colors">Nosotros</a></li></ul></div>
+                <div><h4 class="font-bold mb-4 uppercase tracking-wider text-gray-400">Contacto</h4><ul class="space-y-2 text-gray-400"><li>Baltasar Brum 339, Artigas, Uruguay</li><li>(+598) 1234 5678</li><li>mvianna2111@hotmail.com</li></ul></div>
+                <div><h4 class="font-bold mb-4 uppercase tracking-wider text-gray-400">Redes</h4><div class="flex space-x-6 justify-center md:justify-start"><a href="https://www.facebook.com/profile.php?id=100064525607316" class="text-gray-400 hover:brand-red transition-colors text-2xl"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/cerramientos_del_norte/" class="text-gray-400 hover:brand-red transition-colors text-2xl"><i class="fab fa-instagram"></i></a></div></div>
+            </div>
+            <div class="mt-10 border-t border-gray-800 pt-6 text-center text-gray-500 text-sm"><p>&copy; <span id="year"></span> Cerramientos del Norte. Todos los derechos reservados.</p><p class="mt-1">Diseño web por <a href="https://blockbit.info" class="text-gray-400 hover:text-white">BlockBit</a> para un gran sponsor.</p></div>
+        </div>
+    </footer>
+    
+    <div id="modal-serie20" class="modal hidden fixed inset-0 bg-black bg-opacity-70 z-60 flex items-center justify-center p-4">
+        <div class="modal-content bg-brand-dark rounded-lg shadow-2xl p-8 max-w-2xl w-full relative transform scale-95">
+            <button class="modal-close absolute top-4 right-4 text-gray-500 hover:text-white text-3xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">LÍNEA <span class="brand-red">SERIE 20</span></h3>
+            <p class="text-gray-300">Es una línea tradicional y económica, ideal para aberturas de dimensiones estándar. Ofrece una solución funcional con una estética agradable. Generalmente, esta serie no está diseñada para alojar Doble Vidriado Hermético (DVH) de forma nativa.</p>
+            <p class="text-gray-400 mt-2 text-sm"><strong>Ideal para:</strong> Soluciones económicas y proyectos con requerimientos estándar.</p>
+        </div>
+    </div>
+    <div id="modal-prova" class="modal hidden fixed inset-0 bg-black bg-opacity-70 z-60 flex items-center justify-center p-4">
+        <div class="modal-content bg-brand-dark rounded-lg shadow-2xl p-8 max-w-2xl w-full relative transform scale-95">
+            <button class="modal-close absolute top-4 right-4 text-gray-500 hover:text-white text-3xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">LÍNEA <span class="brand-red">PROVA</span></h3>
+            <p class="text-gray-300">Una línea versátil que combina diseño, rendimiento y una excelente relación costo-beneficio. Es durable, resistente y de fácil armado. Es totalmente compatible con Doble Vidriado Hermético (DVH), lo que asegura un buen aislamiento térmico y acústico.</p>
+            <p class="text-gray-400 mt-2 text-sm"><strong>Ideal para:</strong> Proyectos residenciales y comerciales que buscan un equilibrio entre calidad y presupuesto.</p>
+        </div>
+    </div>
+    <div id="modal-gala" class="modal hidden fixed inset-0 bg-black bg-opacity-70 z-60 flex items-center justify-center p-4">
+        <div class="modal-content bg-brand-dark rounded-lg shadow-2xl p-8 max-w-2xl w-full relative transform scale-95">
+            <button class="modal-close absolute top-4 right-4 text-gray-500 hover:text-white text-3xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">LÍNEA <span class="brand-red">GALA</span></h3>
+            <p class="text-gray-300">Se destaca por su diseño moderno de aristas redondeadas y su alto rendimiento. Ofrece una excelente hermeticidad al aire y estanqueidad al agua, certificada en ensayos. Permite DVH de gran espesor y es apta para aberturas de grandes dimensiones, ofreciendo máximo confort y durabilidad.</p>
+            <p class="text-gray-400 mt-2 text-sm"><strong>Ideal para:</strong> Viviendas que requieren un alto estándar de diseño, confort y aislación.</p>
+        </div>
+    </div>
+    <div id="modal-galacr" class="modal hidden fixed inset-0 bg-black bg-opacity-70 z-60 flex items-center justify-center p-4">
+        <div class="modal-content bg-brand-dark rounded-lg shadow-2xl p-8 max-w-2xl w-full relative transform scale-95">
+            <button class="modal-close absolute top-4 right-4 text-gray-500 hover:text-white text-3xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">LÍNEA <span class="brand-red">GALA CR</span></h3>
+            <p class="text-gray-300">Evolución de la línea Gala, optimizada para sistemas corredizos de alta prestación. Sus perfiles de corte recto simplifican el armado y mejoran el rendimiento. Posee una "caja de agua" que garantiza una estanqueidad superior, siendo ideal para hojas de gran peso y tamaño.</p>
+            <p class="text-gray-400 mt-2 text-sm"><strong>Ideal para:</strong> Grandes puertas y ventanas corredizas que exigen robustez y máxima protección contra el agua.</p>
+        </div>
+    </div>
+    <div id="modal-suma" class="modal hidden fixed inset-0 bg-black bg-opacity-70 z-60 flex items-center justify-center p-4">
+        <div class="modal-content bg-brand-dark rounded-lg shadow-2xl p-8 max-w-2xl w-full relative transform scale-95">
+            <button class="modal-close absolute top-4 right-4 text-gray-500 hover:text-white text-3xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">LÍNEA <span class="brand-red">SUMA</span></h3>
+            <p class="text-gray-300">Es la línea de alta gama por excelencia, diseñada para proyectos sin límites. Permite aberturas de muy grandes dimensiones (hasta 3 metros de altura) con el máximo confort y seguridad. Ofrece una resistencia superior a vientos fuertes y una hermeticidad excepcional.</p>
+            <p class="text-gray-400 mt-2 text-sm"><strong>Ideal para:</strong> Proyectos de vanguardia, con grandes vanos vidriados y las más altas exigencias de seguridad y eficiencia energética.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Script del menú móvil
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.innerHTML = isHidden ? '<i class="fas fa-bars text-2xl"></i>' : '<i class="fas fa-times text-2xl"></i>';
+            });
+
+            // Script de animación 'reveal'
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(element => observer.observe(element));
+
+            // Script de actualización del año en footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // --- SCRIPT PARA MODALES ---
+            const modalTriggers = document.querySelectorAll('.series-card');
+            
+            modalTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const modalId = trigger.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+                    if (modal) {
+                        openModal(modal);
+                    }
+                });
+            });
+
+            const allModals = document.querySelectorAll('.modal');
+            allModals.forEach(modal => {
+                // Cerrar al hacer clic en el botón de cerrar (X)
+                const closeButton = modal.querySelector('.modal-close');
+                if (closeButton) {
+                    closeButton.addEventListener('click', () => {
+                        closeModal(modal);
+                    });
+                }
+                // Cerrar al hacer clic en el fondo oscuro
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        closeModal(modal);
+                    }
+                });
+            });
+
+            function openModal(modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                   modal.querySelector('.modal-content').classList.remove('scale-95');
+                   modal.querySelector('.modal-content').classList.add('scale-100');
+                }, 10); // Pequeño delay para la transición
+            }
+
+            function closeModal(modal) {
+                modal.querySelector('.modal-content').classList.add('scale-95');
+                modal.querySelector('.modal-content').classList.remove('scale-100');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300); // Coincide con la duración de la transición
+            }
+        });
+    </script>
+
+</body>
+</html>
